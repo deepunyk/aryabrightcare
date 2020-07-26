@@ -33,32 +33,25 @@ class _PartnersState extends State<Partners> {
             )
           ]
         ),
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            onTap: (){},
-            hoverColor: Color(0xffDFECF1),
-            child: Padding(
-              padding: EdgeInsets.symmetric(vertical: _mediaQuery.height*0.05),
-              child: Column(
-                children: [
-                  Container(
-                    height:_mediaQuery.height*0.15,
-                    width:_mediaQuery.height*0.15,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(color: Theme.of(context).accentColor, width: 1)
-                    ),
-                    child: ClipOval(
-                      child: Image.asset(img, height: _mediaQuery.height*0.15,fit: BoxFit.fitHeight,),
-                    ),
-                  ),
-                  SizedBox(height: _mediaQuery.height*0.01,),
-                  Text(name, style: GoogleFonts.roboto(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 20),),
-                  Text(desig,style: GoogleFonts.roboto(color: Colors.black87, fontWeight: FontWeight.w400, fontSize: 16),),
-                ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: _mediaQuery.height*0.05),
+          child: Column(
+            children: [
+              Container(
+                height:_mediaQuery.height*0.15,
+                width:_mediaQuery.height*0.15,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Theme.of(context).accentColor, width: 1)
+                ),
+                child: ClipOval(
+                  child: Image.asset(img, height: _mediaQuery.height*0.15,fit: BoxFit.fitHeight,),
+                ),
               ),
-            ),
+              SizedBox(height: _mediaQuery.height*0.01,),
+              Text(name, style: GoogleFonts.roboto(color: Colors.black, fontWeight: FontWeight.w700, fontSize: 20),),
+              Text(desig,style: GoogleFonts.roboto(color: Colors.black87, fontWeight: FontWeight.w400, fontSize: 16),),
+            ],
           ),
         ),
       );
@@ -72,7 +65,7 @@ class _PartnersState extends State<Partners> {
             child: Column(
               children: [
                 SizedBox(height: _mediaQuery.height*0.05,),
-                Text("Our medical and para-medical experts", style: GoogleFonts.roboto(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w500, fontSize: 40),),
+                Text("Our Governing Board", style: GoogleFonts.roboto(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w500, fontSize: 40),),
                 SizedBox(height: _mediaQuery.height*0.05,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

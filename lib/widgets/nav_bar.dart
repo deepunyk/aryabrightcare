@@ -1,3 +1,4 @@
+import 'package:aryabrightcare/screens/service_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -29,6 +30,7 @@ class _NavBarState extends State<NavBar> {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {
+              title == 'Services'?Navigator.of(context).pushNamed(ServiceScreen.routeName):
               widget.update(wid);
             },
             hoverColor: Theme.of(context).accentColor,

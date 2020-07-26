@@ -28,55 +28,29 @@ class _ContactState extends State<Contact> {
     return Column(
       children: [
         Container(
-          height: _mediaQuery.height*0.57,
           color: Color(0xffDFECF1),
           width: _mediaQuery.width,
           padding: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.08),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                width: _mediaQuery.width*0.4,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "CONTACT US",
-                      style: GoogleFonts.roboto(
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 45,
-                          fontWeight: FontWeight.w900),
-                    ),
-                    SizedBox(height: _mediaQuery.height*0.02,),
-                    Text(
-                      "We’d love to hear from you.",
-                      style: GoogleFonts.roboto(
-                        color: Theme.of(context).accentColor,
-                        fontSize: 35,
-                        fontWeight: FontWeight.w700,),
-                      textAlign: TextAlign.start,
-                    ),
-                    SizedBox(height: _mediaQuery.height*0.02,),
-                    Text(
-                      "Whether you have a question about services, trials, pricing, need more clarification, or anything else, our team is ready to answer all your questions.",
-                      style: GoogleFonts.roboto(
-                          color: Colors.black87,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500),
-                      textAlign: TextAlign.start,
-                    ),
-                    SizedBox(height: _mediaQuery.height*0.02,),
-                    CustomButton("Say Hello", (){
-                      launch(_sendEmail.toString());
-                    })
-                  ],
-                ),
+              SizedBox(height: _mediaQuery.height*0.04,),
+              Icon(Icons.mail, color: Theme.of(context).primaryColor,size: _mediaQuery.height*0.07,),
+              SizedBox(height: _mediaQuery.height*0.01,),
+              Text(
+                "Looking for more information, or have questions about the information presented?",
+                style: GoogleFonts.roboto(
+                    color: Colors.black87,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500),
+                textAlign: TextAlign.center,
               ),
-              Container(
-                width: _mediaQuery.width*0.4,
-                child: WebsafeSvg.asset('assets/artworks/contact.svg', height: _mediaQuery.height*0.45, alignment: Alignment.centerRight),
-              )
+              SizedBox(height: _mediaQuery.height*0.02,),
+              CustomButton("Contact Us", (){
+                launch(_sendEmail.toString());
+              }),
+              SizedBox(height: _mediaQuery.height*0.04,),
             ],
           ),
         ),

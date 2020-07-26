@@ -122,7 +122,7 @@ class _FooterState extends State<Footer> {
                         Icon(Icons.phone, color: Theme.of(context).accentColor,size: 20),
                         SizedBox(width: _mediaQuery.width*0.002,),
                         Expanded(
-                          child: SelectableText("+91 7795059301",style: GoogleFonts.roboto(
+                          child: SelectableText("+91 7795059301, +91 7411065301",style: GoogleFonts.roboto(
                               color: Colors.white,
                               fontSize: 12,
                               fontWeight: FontWeight.w300),textAlign: TextAlign.start,),
