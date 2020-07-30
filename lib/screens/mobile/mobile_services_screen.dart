@@ -14,8 +14,8 @@ class MobileServicesScreen extends StatefulWidget {
 class _MobileServicesScreenState extends State<MobileServicesScreen> {
   List<String> _headList = [
     'Home Quarantine',
-    'Apartment/community managed CCC\'s',
-    'Hotels as CCC\'s',
+    'Apartment/community managed CCCs',
+    'Hotels as CCCs',
     'Hospital Management Takeover'
   ];
   List<String> _bodyList = [
@@ -32,59 +32,58 @@ class _MobileServicesScreenState extends State<MobileServicesScreen> {
     'assets/images/services/hospital.jpg'
   ];
 
+  Widget _getService(String title, String desc, String img, double width, double height){
+    return Card(
+      elevation: 10,
+      margin: EdgeInsets.only(top: height*0.05, left: width*0.05, right: width*0.05, bottom: height*0.02),
+      child: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(img, width: double.infinity,height: height*0.3,fit: BoxFit.cover,),
+            SizedBox(height: height*0.02,),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: width*0.03),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AutoSizeText(
+                    title,
+                    style: GoogleFonts.roboto(
+                      color: Theme.of(context).accentColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    maxLines: 1,
+                  ),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
+                  AutoSizeText(
+                    desc,
+                    style: GoogleFonts.roboto(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300),
+                  ),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final _mediaQuery = MediaQuery.of(context).size;
 
-    Widget _getService(String title, String desc, String img){
-      return Card(
-        elevation: 10,
-        margin: EdgeInsets.only(top: _mediaQuery.height*0.05, left: _mediaQuery.width*0.05, right: _mediaQuery.width*0.05, bottom: _mediaQuery.height*0.02),
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(img, width: double.infinity,height: _mediaQuery.height*0.3,fit: BoxFit.cover,),
-              SizedBox(height: _mediaQuery.height*0.02,),
-              Container(
-                height: _mediaQuery.height*0.6,
-                width: double.infinity,
-                padding: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.03),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AutoSizeText(
-                      title,
-                      style: GoogleFonts.roboto(
-                        color: Theme.of(context).accentColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w900,
-                      ),
-                      maxLines: 1,
-                    ),
-                    SizedBox(
-                      height: _mediaQuery.height * 0.02,
-                    ),
-                    AutoSizeText(
-                      desc,
-                      style: GoogleFonts.roboto(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w300),
-                    ),
-                    SizedBox(
-                      height: _mediaQuery.height * 0.02,
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-      );
-    }
 
     return Scaffold(
       backgroundColor: Color(0xffDFECF1),
@@ -111,10 +110,10 @@ class _MobileServicesScreenState extends State<MobileServicesScreen> {
                 fontWeight: FontWeight.w900),
             textAlign: TextAlign.center,
           ),
-          _getService(_headList[0], _bodyList[0], _imgList[0]),
-          _getService(_headList[1], _bodyList[1], _imgList[1]),
-          _getService(_headList[2], _bodyList[2], _imgList[2]),
-          _getService(_headList[3], _bodyList[3], _imgList[3]),
+          _getService(_headList[0], _bodyList[0], _imgList[0], _mediaQuery.width, _mediaQuery.height),
+          _getService(_headList[1], _bodyList[1], _imgList[1], _mediaQuery.width, _mediaQuery.height),
+          _getService(_headList[2], _bodyList[2], _imgList[2], _mediaQuery.width, _mediaQuery.height),
+          _getService(_headList[3], _bodyList[3], _imgList[3], _mediaQuery.width, _mediaQuery.height),
           SizedBox(height: _mediaQuery.height*0.05,),
           MobileFooter(),
         ],

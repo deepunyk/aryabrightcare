@@ -16,8 +16,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
 
   List<String> _headList = [
     'Home Quarantine',
-    'Apartment/community managed CCC\'s',
-    'Hotels as CCC\'s',
+    'Apartment/community managed CCCs',
+    'Hotels as CCCs',
     'Hospital Management Takeover'
   ];
   List<String> _bodyList = [

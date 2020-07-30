@@ -166,7 +166,11 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
       );
     }
 
-    List<Widget> _pages = [_pageOne(), _pageTwo()];
+    Widget _pageThree(){
+      return Image.asset('assets/images/landing/landing_three.jpeg',width: double.infinity,height: _mediaQuery.height*0.7,fit: BoxFit.cover,);
+    }
+
+    List<Widget> _pages = [_pageOne(), _pageTwo(),_pageThree()];
 
     Widget _counter() {
       return Container(
@@ -187,10 +191,10 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    width: _mediaQuery.width*0.4,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         WebsafeSvg.asset('assets/icons/doctor.svg', color: Colors.white, height: _mediaQuery.width*0.08),
                         Container(
@@ -230,11 +234,12 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       ],
                     ),
                   ),
+                  SizedBox(width: _mediaQuery.width*0.1,),
                   Container(
-                    width: _mediaQuery.width*0.4,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         WebsafeSvg.asset('assets/icons/patient.svg', color: Colors.white, height: _mediaQuery.width*0.08),
                         Container(
@@ -305,7 +310,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                     },
                   ),
                   carouselController: _controller,
-                  items: [0, 1].map((i) {
+                  items: [0, 1,2].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return _pages[i];
@@ -323,6 +328,10 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                         width: _mediaQuery.width * 0.01,
                       ),
                       _getCounter(1),
+                      SizedBox(
+                        width: _mediaQuery.width * 0.01,
+                      ),
+                      _getCounter(2),
                     ],
                   ),
                 )

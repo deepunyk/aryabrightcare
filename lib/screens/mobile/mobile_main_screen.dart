@@ -1,8 +1,6 @@
-import 'package:aryabrightcare/widgets/footer.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_about_us.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_footer.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_landing_page.dart';
-import 'package:aryabrightcare/widgets/mobile/mobile_nav_bar.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_services.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_team.dart';
 import 'package:flutter/material.dart';

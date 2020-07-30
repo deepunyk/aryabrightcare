@@ -15,8 +15,8 @@ class _MServicesState extends State<MServices> {
 
   List<String> _headList = [
     'Home Quarantine',
-    'Apartment/community managed CCC\'s',
-    'Hotels as CCC\'s',
+    'Apartment/community managed CCCs',
+    'Hotels as CCCs',
     'Hospital Management Takeover'
   ];
 

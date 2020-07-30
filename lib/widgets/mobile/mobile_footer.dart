@@ -138,8 +138,8 @@ class _MobileFooterState extends State<MobileFooter> {
               ),
               Text("Copyright ©2020 All rights reserved", style: GoogleFonts.roboto(
                   color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400),)
+                  fontSize: 10,
+                  fontWeight: FontWeight.w300),)
             ],
           ),
         ),
