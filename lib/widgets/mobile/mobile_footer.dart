@@ -78,7 +78,7 @@ class _MobileFooterState extends State<MobileFooter> {
                   Icon(Icons.location_on, color: Theme.of(context).accentColor,size: 20),
                   SizedBox(width: _mediaQuery.width*0.02,),
                   Expanded(
-                    child: SelectableText("#1194, CHIRANTHANA, 1st cross, 1st main, BEML layout 5th stage, Rajarajeshwari nagar, Bengaluru- 560098",style: GoogleFonts.roboto(
+                    child: SelectableText("#58, 2nd Main Rd, Vinayaka Layout 3rd Stage, Govindaraja Nagar Ward, Vijayanagar, Bengaluru, Karnataka 560040",style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontSize: 12,
                         fontWeight: FontWeight.w300),textAlign: TextAlign.start,),

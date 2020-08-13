@@ -26,10 +26,10 @@ class _MobileServicesScreenState extends State<MobileServicesScreen> {
   ];
 
   List<String> _imgList = [
-    'assets/images/services/home.jpg',
-    'assets/images/services/apartment.jpg',
-    'assets/images/services/hotel.jpg',
-    'assets/images/services/hospital.jpg'
+    'assets/images/services/home_package.jpg',
+    'assets/images/services/apartment_package.jpg',
+    'assets/images/services/hotel_package.jpg',
+    'assets/images/services/hospital_package.jpg'
   ];
 
   Widget _getService(String title, String desc, String img, double width, double height){
@@ -40,7 +40,7 @@ class _MobileServicesScreenState extends State<MobileServicesScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(img, width: double.infinity,height: height*0.3,fit: BoxFit.cover,),
+            Image.asset(img, width: double.infinity,fit: BoxFit.cover,),
             SizedBox(height: height*0.02,),
             Container(
               width: double.infinity,

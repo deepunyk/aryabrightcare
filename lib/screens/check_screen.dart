@@ -1,3 +1,5 @@
+import 'package:aryabrightcare/screens/tablet/tablet_main_screen.dart';
+
 import 'mobile/mobile_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -20,8 +22,11 @@ class _CheckScreenState extends State<CheckScreen> {
           if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
             return MainScreen();
           }
-          if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
+          else if (sizingInformation.deviceScreenType == DeviceScreenType.mobile) {
             return MobileMainScreen();
+          }
+          else if (sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
+            return TabletMainScreen();
           }
           return MainScreen();
         }));

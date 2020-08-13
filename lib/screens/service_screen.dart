@@ -28,10 +28,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
   ];
 
   List<String> _imgList = [
-    'assets/images/services/home.jpg',
-    'assets/images/services/apartment.jpg',
-    'assets/images/services/hotel.jpg',
-    'assets/images/services/hospital.jpg'
+    'assets/images/services/home_package.jpg',
+    'assets/images/services/apartment_package.jpg',
+    'assets/images/services/hotel_package.jpg',
+    'assets/images/services/hospital_package.jpg'
   ];
 
   @override
@@ -48,7 +48,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
            mainAxisSize: MainAxisSize.min,
            children: [
-             Image.asset(img, width: _mediaQuery.width*0.4,height: double.infinity,fit: BoxFit.cover,),
+             Image.asset(img,height: double.infinity,fit: BoxFit.cover,),
              SizedBox(width: _mediaQuery.width*0.02,),
              Container(
                width: _mediaQuery.width*0.45,
