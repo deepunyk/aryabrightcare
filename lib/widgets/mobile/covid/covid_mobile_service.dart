@@ -1,18 +1,13 @@
-import 'package:aryabrightcare/widgets/contact.dart';
-import 'package:aryabrightcare/widgets/nav_bar.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ServiceScreen extends StatefulWidget {
-
-  static const routeName = '/service';
-
+class CovidMobileService extends StatefulWidget {
   @override
-  _ServiceScreenState createState() => _ServiceScreenState();
+  _CovidMobileServiceState createState() => _CovidMobileServiceState();
 }
 
-class _ServiceScreenState extends State<ServiceScreen> {
+class _CovidMobileServiceState extends State<CovidMobileService> {
 
   List<String> _headList = [
     'Home Quarantine',
@@ -34,91 +29,76 @@ class _ServiceScreenState extends State<ServiceScreen> {
     'assets/images/services/hospital_package.jpg'
   ];
 
+  Widget _getService(String title, String desc, String img, double width, double height){
+    return Card(
+      elevation: 10,
+      margin: EdgeInsets.only(top: height*0.05, left: width*0.05, right: width*0.05, bottom: height*0.02),
+      child: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(img, width: double.infinity,fit: BoxFit.cover,),
+            SizedBox(height: height*0.02,),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: width*0.03),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AutoSizeText(
+                    title,
+                    style: GoogleFonts.roboto(
+                      color: Theme.of(context).accentColor,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    maxLines: 1,
+                  ),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
+                  AutoSizeText(
+                    desc,
+                    style: GoogleFonts.roboto(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w300),
+                  ),
+                  SizedBox(
+                    height: height * 0.03,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final _mediaQuery = MediaQuery.of(context).size;
 
-    Widget _getService(String title, String desc, String img){
-      return Card(
-        elevation: 10,
-        margin: EdgeInsets.only(top: _mediaQuery.height*0.05, left: _mediaQuery.width*0.05, right: _mediaQuery.width*0.05, bottom: _mediaQuery.height*0.02),
-        child: Container(
-          height: _mediaQuery.height*0.7,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-           mainAxisSize: MainAxisSize.min,
-           children: [
-             Image.asset(img,height: double.infinity,fit: BoxFit.cover,),
-             SizedBox(width: _mediaQuery.width*0.02,),
-             Container(
-               width: _mediaQuery.width*0.45,
-               height: double.infinity,
-               child: Column(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                 crossAxisAlignment: CrossAxisAlignment.start,
-                 children: [
-                   AutoSizeText(
-                     title,
-                     style: GoogleFonts.roboto(
-                       color: Theme.of(context).accentColor,
-                       fontSize: 35,
-                       fontWeight: FontWeight.w900,
-                     ),
-                     maxLines: 1,
-                   ),
-                   SizedBox(
-                     height: _mediaQuery.height * 0.02,
-                   ),
-                   Container(height: 4,width: _mediaQuery.width*0.45,color: Theme.of(context).primaryColor,),
-                   SizedBox(
-                     height: _mediaQuery.height * 0.02,
-                   ),
-                   AutoSizeText(
-                     desc,
-                     style: GoogleFonts.roboto(
-                         color: Colors.black,
-                         fontSize: 16,
-                         fontWeight: FontWeight.w400),
-                   ),
-                   SizedBox(
-                     height: _mediaQuery.height * 0.02,
-                   ),
-                 ],
-               ),
-             )
-           ],
-          ),
-        ),
-      );
-    }
 
-    return Scaffold(
-      backgroundColor: Color(0xffDFECF1),
-      body: Column(
-        children: [
-          NavBar((int wid){Navigator.of(context).pop();}),
-          Expanded(
-            child: ListView(
-              children: [
-                SizedBox(height: _mediaQuery.height*0.05,),
-                Text(
-                  "SERVICES",
-                  style: GoogleFonts.roboto(
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w900),
-                  textAlign: TextAlign.center,
-                ),
-                _getService(_headList[0], _bodyList[0], _imgList[0]),
-                _getService(_headList[1], _bodyList[1], _imgList[1]),
-                _getService(_headList[2], _bodyList[2], _imgList[2]),
-                _getService(_headList[3], _bodyList[3], _imgList[3]),
-                Contact(),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+    return Container(color: Color(0xffDFECF1),
+    child: Column(
+      children: [
+        SizedBox(height: _mediaQuery.height*0.05,),
+        Text(
+          "SERVICES",
+          style: GoogleFonts.roboto(
+              color: Theme.of(context).primaryColor,
+              fontSize: 30,
+              fontWeight: FontWeight.w900),
+          textAlign: TextAlign.center,
+        ),
+        _getService(_headList[0], _bodyList[0], _imgList[0], _mediaQuery.width, _mediaQuery.height),
+        _getService(_headList[1], _bodyList[1], _imgList[1], _mediaQuery.width, _mediaQuery.height),
+        _getService(_headList[2], _bodyList[2], _imgList[2], _mediaQuery.width, _mediaQuery.height),
+        _getService(_headList[3], _bodyList[3], _imgList[3], _mediaQuery.width, _mediaQuery.height),
+      ],
+    ),);
   }
 }

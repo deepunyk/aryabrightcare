@@ -1,12 +1,10 @@
 import 'package:aryabrightcare/models/trap_clip.dart';
 import 'package:aryabrightcare/models/trap_clip_two.dart';
-import 'package:aryabrightcare/widgets/about_us.dart';
 import 'package:aryabrightcare/widgets/custom_button.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 import 'nav_bar.dart';
@@ -32,62 +30,10 @@ class _LandingPageState extends State<LandingPage> {
       return Stack(
         children: [
           Image.asset(
-            'assets/images/landing/landing_one.jpg',
+            'assets/images/landing/landing_five.jpg',
             width: double.infinity,
-            height: _mediaQuery.height * 0.73,
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
-          ),
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Color(0x1a006591),
-          ),
-          ClipPath(
-            clipper: TrapClipOne(),
-            child: Container(
-              color: Colors.white,
-              width: _mediaQuery.width * 0.6,
-              padding: EdgeInsets.only(
-                  left: _mediaQuery.width * 0.08,
-                  right: _mediaQuery.width * 0.13),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'ARYA BRIGHTCARE',
-                    style: GoogleFonts.roboto(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 50,
-                        fontWeight: FontWeight.w900),
-                  ),
-                  Text(
-                    'Holistic health care service provider',
-                    style: GoogleFonts.roboto(
-                        color: Theme.of(context).accentColor,
-                        fontSize: 35,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  SizedBox(
-                    height: _mediaQuery.height * 0.01,
-                  ),
-                  Text(
-                    'Arya BrightCare is a dedicated team of medical professionals who are striving to make a transformative impact in the society through holistic and sustainable healthcare approach.',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black87,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  SizedBox(
-                    height: _mediaQuery.height * 0.02,
-                  ),
-                  CustomButton("Learn More", () {
-                    widget.update(2);
-                  })
-                ],
-              ),
-            ),
           ),
         ],
       );
@@ -97,59 +43,29 @@ class _LandingPageState extends State<LandingPage> {
       return Stack(
         children: [
           Image.asset(
-            'assets/images/landing/landing_two.jpg',
+            'assets/images/landing/landing_one.png',
             width: double.infinity,
-            height: _mediaQuery.height * 0.73,
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
-          ),
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Color(0x1a006591),
-          ),
-          ClipPath(
-            clipper: TrapClipTwo(),
-            child: Container(
-              color: Colors.white,
-              width: _mediaQuery.width * 0.5,
-              padding: EdgeInsets.only(
-                  left: _mediaQuery.width * 0.08,
-                  right: _mediaQuery.width * 0.13),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-
-                children: [
-                  Text(
-                    'Clinically Driven Covid-19 Care',
-                    style: GoogleFonts.roboto(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 30,
-                        fontWeight: FontWeight.w900),
-                  ),
-                  Text(
-                    'Stress free Covid-19 care in the comfort of your home',
-                    style: GoogleFonts.roboto(
-                        color: Theme.of(context).accentColor,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  SizedBox(
-                    height: _mediaQuery.height * 0.01,
-                  ),
-                  CustomButton("Learn More", () {
-                    widget.update(3);
-                  })
-                ],
-              ),
-            ),
           ),
         ],
       );
     }
 
-    List<Widget> _pages = [_pageOne(), _pageTwo()];
+    Widget _pageThree() {
+      return Stack(
+        children: [
+          Image.asset(
+            'assets/images/landing/landing_two.png',
+            width: double.infinity,
+            fit: BoxFit.cover,
+            alignment: Alignment.topCenter,
+          ),
+        ],
+      );
+    }
+
+    List<Widget> _pages = [_pageOne(), _pageTwo(),_pageThree()];
 
     Widget _counter() {
       return Container(
@@ -160,7 +76,7 @@ class _LandingPageState extends State<LandingPage> {
             Container(
               width: double.infinity,
               height: double.infinity,
-              color: Color(0xfffb5d60),
+              color: Color(0xffDFECF1),
             ),
             Padding(
               padding:
@@ -174,7 +90,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        WebsafeSvg.asset('assets/icons/doctor.svg', color: Colors.white, height: _mediaQuery.height*0.08),
+                        WebsafeSvg.asset('assets/icons/doctor.svg', color: Theme.of(context).primaryColor, height: _mediaQuery.height*0.08),
                         Container(
                           height: _mediaQuery.height*0.1,
                           width: 2,
@@ -201,7 +117,7 @@ class _LandingPageState extends State<LandingPage> {
                             Text(
                               "Empanelled Doctors and Nurses",
                               style: GoogleFonts.roboto(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 20),
                             )
@@ -216,7 +132,7 @@ class _LandingPageState extends State<LandingPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        WebsafeSvg.asset('assets/icons/patient.svg', color: Colors.white, height: _mediaQuery.height*0.08),
+                        WebsafeSvg.asset('assets/icons/patient.svg', color: Theme.of(context).primaryColor, height: _mediaQuery.height*0.08),
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.01),
                           height: _mediaQuery.height*0.1,
@@ -243,7 +159,7 @@ class _LandingPageState extends State<LandingPage> {
                             Text(
                               "Patients Treated",
                               style: GoogleFonts.roboto(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 20),
                             )
@@ -293,16 +209,15 @@ class _LandingPageState extends State<LandingPage> {
       child: Column(
         children: [
           Container(
-            height: _mediaQuery.height * 0.73,
             child: Stack(
               children: [
                 CarouselSlider(
                   options: CarouselOptions(
-                    height: _mediaQuery.height * 0.73,
-                    autoPlayInterval: Duration(seconds: 50),
+                    autoPlayInterval: Duration(seconds: 15),
                     enableInfiniteScroll: true,
                     enlargeCenterPage: true,
                     viewportFraction: 1,
+                    aspectRatio: 1920/540,
                     autoPlay: true,
                     onPageChanged: (val, _) {
                       setState(() {
@@ -311,7 +226,7 @@ class _LandingPageState extends State<LandingPage> {
                     },
                   ),
                   carouselController: _controller,
-                  items: [0, 1].map((i) {
+                  items: [0, 1,2].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return _pages[i];
@@ -329,6 +244,10 @@ class _LandingPageState extends State<LandingPage> {
                         width: _mediaQuery.width * 0.01,
                       ),
                       _getCounter(1),
+                      SizedBox(
+                        width: _mediaQuery.width * 0.01,
+                      ),
+                      _getCounter(2),
                     ],
                   ),
                 )

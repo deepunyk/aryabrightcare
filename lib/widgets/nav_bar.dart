@@ -1,11 +1,9 @@
-import 'package:aryabrightcare/screens/service_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'contact.dart';
 
 class NavBar extends StatefulWidget {
-
   final Function update;
 
   NavBar(this.update);
@@ -15,11 +13,8 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-
-
   @override
   Widget build(BuildContext context) {
-
     final _mediaQuery = MediaQuery.of(context).size;
 
     Widget _getNavItem(String title, int wid) {
@@ -30,13 +25,12 @@ class _NavBarState extends State<NavBar> {
           color: Colors.transparent,
           child: InkWell(
             onTap: () {
-              title == 'Services'?Navigator.of(context).pushNamed(ServiceScreen.routeName):
               widget.update(wid);
             },
             hoverColor: Theme.of(context).accentColor,
             child: Padding(
               padding:
-              EdgeInsets.symmetric(horizontal: _mediaQuery.width * 0.05),
+                  EdgeInsets.symmetric(horizontal: _mediaQuery.width * 0.04),
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -63,8 +57,7 @@ class _NavBarState extends State<NavBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-                padding:
-                EdgeInsets.only(left: _mediaQuery.width * 0.025),
+                padding: EdgeInsets.only(left: _mediaQuery.width * 0.025),
                 child: Image.asset(
                   'assets/images/main_logo.png',
                   height: _mediaQuery.height * 0.07,
@@ -72,24 +65,27 @@ class _NavBarState extends State<NavBar> {
             Card(
               elevation: 10,
               shadowColor: Theme.of(context).accentColor,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40))),
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(40))),
               margin: EdgeInsets.zero,
               child: Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).primaryColor,
                   borderRadius:
-                  BorderRadius.only(bottomLeft: Radius.circular(40)),
+                      BorderRadius.only(bottomLeft: Radius.circular(40)),
                 ),
                 child: ClipRRect(
                   borderRadius:
-                  BorderRadius.only(bottomLeft: Radius.circular(40)),
+                      BorderRadius.only(bottomLeft: Radius.circular(40)),
                   child: Row(
                     children: [
                       _getNavItem('Home', 1),
                       _getNavItem('About', 2),
                       _getNavItem('Services', 3),
                       _getNavItem('Team', 4),
-                      _getNavItem('Contact', 5)
+                      _getNavItem('Covid Care', 5),
+                      _getNavItem('Contact', 6),
                     ],
                   ),
                 ),

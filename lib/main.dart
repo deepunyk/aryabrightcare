@@ -1,10 +1,6 @@
-import 'package:aryabrightcare/screens/main_screen.dart';
-import 'package:aryabrightcare/screens/mobile/mobile_services_screen.dart';
-import 'package:aryabrightcare/screens/service_screen.dart';
-import 'package:aryabrightcare/widgets/mobile/mobile_services.dart';
-
-import 'screens/mobile/mobile_main_screen.dart';
-import 'screens/check_screen.dart';
+import 'package:aryabrightcare/screens/check_screen.dart';
+import 'package:aryabrightcare/screens/desktop/main_screen.dart';
+import 'package:aryabrightcare/screens/mobile/mobile_main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,10 +22,8 @@ class MyApp extends StatelessWidget {
       home: CheckScreen(),
       routes: {
         MainScreen.routeName:(ctx)=>MainScreen(),
-        ServiceScreen.routeName:(ctx)=>ServiceScreen(),
         CheckScreen.routeName:(ctx)=>CheckScreen(),
         MobileMainScreen.routeName:(ctx)=>MobileMainScreen(),
-        MobileServicesScreen.routeName:(ctx)=>MobileServicesScreen(),
       },
     );
   }

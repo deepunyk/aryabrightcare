@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:websafe_svg/websafe_svg.dart';
@@ -34,54 +35,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
         width: double.infinity,
         child: Stack(
           children: [
-            Image.asset('assets/images/landing/landing_one.jpg',width: double.infinity,height: double.infinity,fit: BoxFit.cover,alignment: Alignment.centerRight,),
-            Container(height: double.infinity,width: double.infinity,color: Colors.white70,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: _mediaQuery.width * 0.08,
-                  vertical: _mediaQuery.height * 0.08),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AutoSizeText(
-                    'ARYA BRIGHTCARE',
-                    style: GoogleFonts.roboto(
-                      color: Theme
-                          .of(context)
-                          .primaryColor,
-                      fontSize: 35,
-                      fontWeight: FontWeight.w900,),
-                    maxLines: 1,
-                  ),
-                  AutoSizeText(
-                    'Holistic health care service provider',
-                    style: GoogleFonts.roboto(
-                        color: Theme
-                            .of(context)
-                            .accentColor,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700),
-                    maxLines: 1,
-                  ),
-                  SizedBox(
-                    height: _mediaQuery.height * 0.01,
-                  ),
-                  Text(
-                    'Arya BrightCare is a dedicated team of medical professionals who are striving to make a transformative impact in the society through holistic and sustainable healthcare approach.',
-                    style: GoogleFonts.roboto(
-                        color: Colors.black87,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300),
-                  ),
-                  SizedBox(
-                    height: _mediaQuery.height * 0.02,
-                  ),
-                  CustomButton("Learn More", () {
-                    widget.update(2);
-                  })
-                ],
-              ),
-            ),
+            Image.asset('assets/images/landing/mobile_landing_one.png',width: double.infinity,height: double.infinity,fit: BoxFit.cover,alignment: Alignment.center,),
           ],
         ),
       );
@@ -93,44 +47,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
         width: double.infinity,
         child: Stack(
           children: [
-            Image.asset('assets/images/landing/landing_two.jpg',width: double.infinity,height: double.infinity,fit: BoxFit.cover,),
-            Container(height: double.infinity,width: double.infinity,color: Colors.white54,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: _mediaQuery.width * 0.08,
-                  vertical: _mediaQuery.height * 0.11),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  AutoSizeText(
-                    'Clinically Driven Covid-19 Care',
-                    style: GoogleFonts.roboto(
-                      color: Theme
-                          .of(context)
-                          .primaryColor,
-                      fontSize: 35,
-                      fontWeight: FontWeight.w900,),
-                    maxLines: 1,
-                  ),
-                  AutoSizeText(
-                    'Stress free Covid-19 care in the comfort of your home',
-                    style: GoogleFonts.roboto(
-                        color: Theme
-                            .of(context)
-                            .accentColor,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700),
-                    maxLines: 1,
-                  ),
-                  SizedBox(
-                    height: _mediaQuery.height * 0.02,
-                  ),
-                  CustomButton("Learn More", () {
-                    widget.update(3);
-                  })
-                ],
-              ),
-            ),
+            Image.asset('assets/images/landing/mobile_landing_two.png',width: double.infinity,height: double.infinity,fit: BoxFit.cover,alignment: Alignment.centerRight,),
           ],
         ),
       );
@@ -138,8 +55,8 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
 
     Widget _getCounter(int code) {
       return Container(
-        width: _mediaQuery.height * 0.02,
-        height: _mediaQuery.height * 0.02,
+        width: 10,
+        height:10,
         decoration: BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
@@ -167,10 +84,32 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
     }
 
     Widget _pageThree(){
-      return Image.asset('assets/images/landing/landing_three.jpeg',width: double.infinity,height: _mediaQuery.height*0.7,fit: BoxFit.cover,);
+      return Image.asset('assets/images/landing/landing_three.jpeg',width: double.infinity,height: _mediaQuery.height*0.73,fit: BoxFit.cover,);
     }
 
-    List<Widget> _pages = [_pageOne(), _pageTwo(),_pageThree()];
+    Widget _pageFour(){
+      return Stack(
+        children: [
+          Image.asset('assets/images/landing/landing_four.jpg',width: double.infinity,height: _mediaQuery.height*0.73,fit: BoxFit.cover,),
+          Container(height: double.infinity,width: double.infinity,color: Color(0x66000000),),
+          Padding(
+            padding: EdgeInsets.only(left: _mediaQuery.width*0.08, bottom: _mediaQuery.height*0.1),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Consultation at our office clinic", style: GoogleFonts.roboto(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),),
+                Text("General physician", style: GoogleFonts.roboto(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500),),
+                Text("Monday to Saturday", style: GoogleFonts.roboto(color: Colors.white, fontSize: 16),),
+                Text("10am to 8pm", style: GoogleFonts.roboto(color: Colors.white, fontSize: 16),),
+              ],
+            ),
+          )
+        ],
+      );
+    }
+
+    List<Widget> _pages = [_pageOne(), _pageTwo(),_pageThree(),_pageFour()];
 
     Widget _counter() {
       return Container(
@@ -181,7 +120,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
             Container(
               width: double.infinity,
               height: double.infinity,
-              color: Color(0xfffb5d60),
+              color: Color(0xffDFECF1),
             ),
             Padding(
               padding:
@@ -196,7 +135,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        WebsafeSvg.asset('assets/icons/doctor.svg', color: Colors.white, height: _mediaQuery.width*0.08),
+                        WebsafeSvg.asset('assets/icons/doctor.svg', color: Theme.of(context).primaryColor, height: _mediaQuery.width*0.08),
                         Container(
                           height: _mediaQuery.height*0.08,
                           width: 2,
@@ -224,7 +163,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                             AutoSizeText(
                               "Empanelled Doctors\nand Nurses",
                               style: GoogleFonts.roboto(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w300,
                                   fontSize: 11),
                               maxLines: 2,
@@ -241,7 +180,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        WebsafeSvg.asset('assets/icons/patient.svg', color: Colors.white, height: _mediaQuery.width*0.08),
+                        WebsafeSvg.asset('assets/icons/patient.svg', color: Theme.of(context).primaryColor, height: _mediaQuery.width*0.08),
                         Container(
                           height: _mediaQuery.height*0.08,
                           width: 2,
@@ -269,7 +208,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                             AutoSizeText(
                               "Patients\nTreated",
                               style: GoogleFonts.roboto(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w300,
                                   fontSize: 11),
                               maxLines: 2,
@@ -310,7 +249,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                     },
                   ),
                   carouselController: _controller,
-                  items: [0, 1,2].map((i) {
+                  items: [0, 1,2,3].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return _pages[i];
@@ -332,6 +271,10 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                         width: _mediaQuery.width * 0.01,
                       ),
                       _getCounter(2),
+                      SizedBox(
+                        width: _mediaQuery.width * 0.01,
+                      ),
+                      _getCounter(3),
                     ],
                   ),
                 )

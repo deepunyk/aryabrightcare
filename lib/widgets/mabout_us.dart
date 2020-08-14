@@ -42,7 +42,7 @@ class _MAboutUsState extends State<MAboutUs> {
                   height: _mediaQuery.height * 0.03,
                 ),
                 Text(
-                  "Arya BrightCare is a team of like minded medical professionals currently contributing to the solution to deal the corona pandemic situation in India.\n\nArya BrightCare is an initiative of Amma trusts, Bangalore started on 20 June 2020 is working for social cause currently by managing COVID-19 positive patients at their home, hotel isolation centres, apartment isolation centres, and hospitals dedicated as COVID Care Centres (CCC).\n\nArya BrightCare also takes up the work of sanitising homes to reduce the risk of COVID transmission.",
+                  "Arya BrightCare is a dedicated team of medical professionals who are striving to make a transformative impact in the society by transparency, affordability, efficiency and accessibility through holistic and sustainable healthcare approach.\n\nWe provide home health solutions through home visits of doctors, nurses, physiotherapists.\n\nWe also provide nurses and caregivers to serve patients at their home.We deal with renting and purchase of medical equipments at a very reasonable cost.\nWe also facilitate lab tests at home.",
                   style: GoogleFonts.roboto(
                       color: Colors.black87,
                       fontSize: 15,

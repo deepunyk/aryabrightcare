@@ -1,17 +1,32 @@
-import 'package:aryabrightcare/screens/service_screen.dart';
-import 'package:aryabrightcare/widgets/custom_button.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MServices extends StatefulWidget {
+  final Function update;
+
+  MServices(this.update);
+
   @override
   _MServicesState createState() => _MServicesState();
 }
 
 class _MServicesState extends State<MServices> {
   int _cur = 0;
+
+  List<String> _serviceName = [
+    "ICU care at home",
+    "Doctor consultation",
+    "Caregivers",
+    "Physiotherapy",
+    "Speech and language therapy",
+    "Lab test",
+    "Medical equipment",
+    "Stroke rehabilitation",
+    "Respiratory care"
+  ];
 
   List<String> _headList = [
     'Home Quarantine',
@@ -83,7 +98,7 @@ class _MServicesState extends State<MServices> {
                       AutoSizeText(
                         title,
                         style: GoogleFonts.roboto(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).primaryColor,
                           fontSize: 35,
                           fontWeight: FontWeight.w900,
                         ),
@@ -110,15 +125,19 @@ class _MServicesState extends State<MServices> {
                                 Text(
                                   "More Details",
                                   style: GoogleFonts.roboto(
-                                      color: Theme.of(context).primaryColor,
+                                      color: Theme.of(context).accentColor,
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                Icon(Icons.navigate_next, color: Theme.of(context).primaryColor,size: 20,)
+                                Icon(
+                                  Icons.navigate_next,
+                                  color: Theme.of(context).accentColor,
+                                  size: 20,
+                                )
                               ],
                             ),
                             onPressed: () {
-                              Navigator.of(context).pushNamed(ServiceScreen.routeName);
+                              widget.update(5);
                             },
                           ),
                         ),
@@ -133,63 +152,137 @@ class _MServicesState extends State<MServices> {
       );
     }
 
-    return Container(
-      height: _mediaQuery.height * 0.9,
-      color: Color(0xffDFECF1),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Text(
-            "SERVICES",
-            style: GoogleFonts.roboto(
-                color: Theme.of(context).primaryColor,
-                fontSize: 40,
-                fontWeight: FontWeight.w900),
+    Widget _getServiceCard(String title) {
+      return Card(
+        margin: EdgeInsets.only(right: _mediaQuery.width*0.02),
+        child: Container(
+          alignment: Alignment.center,
+          child: Text(
+            title,
+            style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
           ),
-          CarouselSlider(
-            options: CarouselOptions(
-              autoPlayInterval: Duration(seconds: 5),
-              height: _mediaQuery.height * 0.6,
-              enableInfiniteScroll: false,
-              enlargeCenterPage: true,
-              viewportFraction: 0.6,
-              scrollPhysics: BouncingScrollPhysics(),
-              autoPlay: true,
-              onPageChanged: (val, _) {
-                setState(() {
-                  _cur = val;
-                });
-              },
-            ),
-            items: [0, 1, 2, 3].map((i) {
-              return Builder(
-                builder: (BuildContext context) {
-                  return _getSlide(
-                      _headList[i], _bodyList[i], i + 1, _imgList[i]);
-                },
-              );
-            }).toList(),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          padding: EdgeInsets.symmetric(vertical: 3, horizontal: 20),
+        ),
+      );
+    }
+
+    return Column(
+      children: [
+        Container(
+          color: Color(0xffDFECF1),
+          width: double.infinity,
+          child: Column(
             children: [
-              _getBtm(0),
               SizedBox(
-                width: _mediaQuery.width * 0.02,
+                height: _mediaQuery.height * 0.05,
               ),
-              _getBtm(1),
+              Text(
+                "SERVICES",
+                style: GoogleFonts.roboto(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 40,
+                    fontWeight: FontWeight.w900),
+              ),
               SizedBox(
-                width: _mediaQuery.width * 0.02,
+                height: _mediaQuery.height * 0.02,
               ),
-              _getBtm(2),
+              Text(
+                "From health packages for the busy executive to trained nurses for post-surgery care, we offer all that you need for the happy and the tough times.",
+                style: GoogleFonts.roboto(color: Colors.black, fontSize: 18),
+              ),
               SizedBox(
-                width: _mediaQuery.width * 0.02,
+                height: _mediaQuery.height * 0.03,
               ),
-              _getBtm(3),
+              Container(
+                height: _mediaQuery.height * 0.1,
+                child: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  children: [
+                    SizedBox(
+                      width: _mediaQuery.width * 0.1,
+                    ),
+                    _getServiceCard(_serviceName[0]),
+                    _getServiceCard(_serviceName[1]),
+                    _getServiceCard(_serviceName[2]),
+                    _getServiceCard(_serviceName[3]),
+                    _getServiceCard(_serviceName[4]),
+                    _getServiceCard(_serviceName[5]),
+                    _getServiceCard(_serviceName[6]),
+                    _getServiceCard(_serviceName[7]),
+                    _getServiceCard(_serviceName[8]),
+                    SizedBox(
+                      width: _mediaQuery.width * 0.1,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: _mediaQuery.height * 0.05,
+              ),
             ],
-          )
-        ],
-      ),
+          ),
+        ),
+        Container(
+          height: _mediaQuery.height * 0.9,
+          color: Color(0xff006591),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                "COVID CARE SERVICES",
+                style: GoogleFonts.roboto(
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontWeight: FontWeight.w900),
+              ),
+              CarouselSlider(
+                options: CarouselOptions(
+                  autoPlayInterval: Duration(seconds: 5),
+                  height: _mediaQuery.height * 0.6,
+                  enableInfiniteScroll: false,
+                  enlargeCenterPage: true,
+                  viewportFraction: 0.6,
+                  scrollPhysics: BouncingScrollPhysics(),
+                  autoPlay: true,
+                  onPageChanged: (val, _) {
+                    setState(() {
+                      _cur = val;
+                    });
+                  },
+                ),
+                items: [0, 1, 2, 3].map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return _getSlide(
+                          _headList[i], _bodyList[i], i + 1, _imgList[i]);
+                    },
+                  );
+                }).toList(),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _getBtm(0),
+                  SizedBox(
+                    width: _mediaQuery.width * 0.02,
+                  ),
+                  _getBtm(1),
+                  SizedBox(
+                    width: _mediaQuery.width * 0.02,
+                  ),
+                  _getBtm(2),
+                  SizedBox(
+                    width: _mediaQuery.width * 0.02,
+                  ),
+                  _getBtm(3),
+                ],
+              )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:aryabrightcare/screens/main_screen.dart';
+import 'package:aryabrightcare/screens/desktop/main_screen.dart';
 import 'package:aryabrightcare/screens/mobile/mobile_main_screen.dart';
 import 'package:flutter/material.dart';
 
