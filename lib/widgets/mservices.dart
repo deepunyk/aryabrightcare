@@ -28,6 +28,18 @@ class _MServicesState extends State<MServices> {
     "Respiratory care"
   ];
 
+  List<String> _serviceImg = [
+    'assets/images/services/main/icu_care.jpg',
+    'assets/images/services/main/doctor_consultation.jpg',
+    'assets/images/services/main/care_givers.jpg',
+    'assets/images/services/main/physiotherapy.jpg',
+    'assets/images/services/main/speech.jpg',
+    'assets/images/services/main/lab_test.jpg',
+    'assets/images/services/main/medical_equipments.jpg',
+    'assets/images/services/main/stroke.jpg',
+    'assets/images/services/main/respiratory.jpg',
+  ];
+
   List<String> _headList = [
     'Home Quarantine',
     'Apartment/community managed CCCs',
@@ -152,71 +164,101 @@ class _MServicesState extends State<MServices> {
       );
     }
 
-    Widget _getServiceCard(String title) {
-      return Card(
-        margin: EdgeInsets.only(right: _mediaQuery.width*0.02),
-        child: Container(
-          alignment: Alignment.center,
-          child: Text(
-            title,
-            style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w500),
+    Widget _getServiceCard(String title, String img) {
+      return Container(
+        height: 250,
+        width: _mediaQuery.width*0.15,
+        margin: EdgeInsets.only(right: 20),
+        child: Card(
+          elevation: 5,
+          child: Stack(
+            children: [
+              Container(height: 250,
+                  width: _mediaQuery.width*0.15,child: Image.asset(img,fit: BoxFit.cover,height: double.infinity,width: double.infinity,)),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 80,
+                  width: _mediaQuery.width*0.15,
+                  color: Color(0x80006591),
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: AutoSizeText(
+                    title,
+                    style: GoogleFonts.roboto(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
           ),
-          padding: EdgeInsets.symmetric(vertical: 3, horizontal: 20),
         ),
       );
     }
 
+
+
     return Column(
       children: [
         Container(
-          color: Color(0xffDFECF1),
+          color: Color(0xffF2FBFF),
           width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.05),
           child: Column(
             children: [
               SizedBox(
                 height: _mediaQuery.height * 0.05,
               ),
               Text(
-                "SERVICES",
+                "Our Medical Services",
                 style: GoogleFonts.roboto(
-                    color: Theme.of(context).primaryColor,
                     fontSize: 40,
-                    fontWeight: FontWeight.w900),
+                    fontWeight: FontWeight.w900, color: Theme.of(context).primaryColor),
               ),
               SizedBox(
-                height: _mediaQuery.height * 0.02,
+                height: 20,
               ),
               Text(
                 "From health packages for the busy executive to trained nurses for post-surgery care, we offer all that you need for the happy and the tough times.",
-                style: GoogleFonts.roboto(color: Colors.black, fontSize: 18),
+                style: GoogleFonts.roboto(color: Colors.black, fontSize: 18),textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: _mediaQuery.height * 0.03,
+                height: 20,
+              ),
+              Text(
+                "Home Healthcare Services",
+                style: GoogleFonts.roboto(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 20,
               ),
               Container(
-                height: _mediaQuery.height * 0.1,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(),
+                  width: double.infinity,
+                margin: EdgeInsets.only(bottom: 40),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: _mediaQuery.width * 0.1,
-                    ),
-                    _getServiceCard(_serviceName[0]),
-                    _getServiceCard(_serviceName[1]),
-                    _getServiceCard(_serviceName[2]),
-                    _getServiceCard(_serviceName[3]),
-                    _getServiceCard(_serviceName[4]),
-                    _getServiceCard(_serviceName[5]),
-                    _getServiceCard(_serviceName[6]),
-                    _getServiceCard(_serviceName[7]),
-                    _getServiceCard(_serviceName[8]),
-                    SizedBox(
-                      width: _mediaQuery.width * 0.1,
-                    ),
+                    _getServiceCard(_serviceName[0],_serviceImg[0]),
+                    _getServiceCard(_serviceName[1],_serviceImg[1]),
+                    _getServiceCard(_serviceName[2],_serviceImg[2]),
+                    _getServiceCard(_serviceName[3],_serviceImg[3]),
+                    _getServiceCard(_serviceName[4],_serviceImg[4]),
                   ],
-                ),
+                )
+              ),
+              Container(
+               width: double.infinity,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    _getServiceCard(_serviceName[5],_serviceImg[5]),
+                    _getServiceCard(_serviceName[6],_serviceImg[6]),
+                    _getServiceCard(_serviceName[7],_serviceImg[7]),
+                    _getServiceCard(_serviceName[8],_serviceImg[8]),
+                  ],
+                )
               ),
               SizedBox(
                 height: _mediaQuery.height * 0.05,
@@ -226,14 +268,13 @@ class _MServicesState extends State<MServices> {
         ),
         Container(
           height: _mediaQuery.height * 0.9,
-          color: Color(0xff006591),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                "COVID CARE SERVICES",
+                "Covid Care Services",
                 style: GoogleFonts.roboto(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 40,
                     fontWeight: FontWeight.w900),
               ),

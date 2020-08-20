@@ -21,17 +21,11 @@ class _CovidLandingState extends State<CovidLanding> {
           Image.asset(
             'assets/images/services/home.jpg',
             width: double.infinity,
-            height: _mediaQuery.height * 0.73,
+            height: _mediaQuery.height * 0.9,
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),
           Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Color(0x1a006591),
-          ),
-          Container(
-            color: Color(0x60000000),
             width: _mediaQuery.width,
             padding: EdgeInsets.only(
                 left: _mediaQuery.width * 0.08,
@@ -42,18 +36,25 @@ class _CovidLandingState extends State<CovidLanding> {
 
               children: [
                 Text(
-                  'Clinically Driven Covid-19 Care',
+                  'Clinically Driven',
                   style: GoogleFonts.roboto(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w800,letterSpacing: 1.2),
+                      color: Theme.of(context).primaryColor,
+                      fontSize: 60,
+                      fontWeight: FontWeight.w900,letterSpacing: 1.05, shadows: [Shadow(color: Colors.white, blurRadius: 1)]),
+                ),
+                Text(
+                  'Covid-19 Care',
+                  style: GoogleFonts.roboto(
+                      color: Colors.black,
+                      fontSize: 60,
+                      fontWeight: FontWeight.w900,letterSpacing: 1.05,shadows: [Shadow(color: Colors.white, blurRadius: 1)]),
                 ),
                 Text(
                   'Stress free Covid-19 care in the comfort of your home',
                   style: GoogleFonts.roboto(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,letterSpacing: 1.1),
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -67,7 +68,7 @@ class _CovidLandingState extends State<CovidLanding> {
       child: Column(
         children: [
           Container(
-            height: _mediaQuery.height * 0.73,
+            height: _mediaQuery.height * 0.9,
             child: _pageTwo()
           ),
         ],

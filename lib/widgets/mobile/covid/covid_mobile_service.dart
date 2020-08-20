@@ -82,17 +82,16 @@ class _CovidMobileServiceState extends State<CovidMobileService> {
     final _mediaQuery = MediaQuery.of(context).size;
 
 
-    return Container(color: Color(0xffDFECF1),
+    return Container(color: Color(0xffF2FBFF),
     child: Column(
       children: [
         SizedBox(height: _mediaQuery.height*0.05,),
         Text(
-          "SERVICES",
+          "Covid Care Services",
           style: GoogleFonts.roboto(
               color: Theme.of(context).primaryColor,
-              fontSize: 30,
-              fontWeight: FontWeight.w900),
-          textAlign: TextAlign.center,
+              fontSize: 20,
+              fontWeight: FontWeight.w700, ),textAlign: TextAlign.center,
         ),
         _getService(_headList[0], _bodyList[0], _imgList[0], _mediaQuery.width, _mediaQuery.height),
         _getService(_headList[1], _bodyList[1], _imgList[1], _mediaQuery.width, _mediaQuery.height),

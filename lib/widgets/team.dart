@@ -29,7 +29,7 @@ class _PartnersState extends State<Partners> {
             BoxShadow(
               color: Color(0x60fb5d60),
               spreadRadius: 1,
-              blurRadius: 5
+              blurRadius: 1
             )
           ]
         ),
@@ -58,27 +58,22 @@ class _PartnersState extends State<Partners> {
     }
 
     return Container(
-      height: _mediaQuery.height * 0.6,
+      color: Color(0xffF2FBFF),
       child: Column(
         children: [
-          Expanded(
-            child: Column(
-              children: [
-                SizedBox(height: _mediaQuery.height*0.05,),
-                Text("Our Governing Board", style: GoogleFonts.roboto(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w500, fontSize: 40),),
-                SizedBox(height: _mediaQuery.height*0.05,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    _getDoc('assets/images/doc_chin.jpeg','Dr. Chinmaya Urs R','Founder, CEO'),
-                    _getDoc('assets/images/doc_abi.jpeg','Dr. A B Shetty','Co-founder, Managing Director'),
-                    _getDoc('assets/images/doc_shar.jpeg','Dr. Sharath Chandra','Co-founder, Medical Director')
-                  ],
-                )
-              ],
-            ),
+          SizedBox(height: _mediaQuery.height*0.05,),
+          Text("Our Governing Board", style: GoogleFonts.roboto(color: Theme.of(context).primaryColor, fontWeight: FontWeight.w500, fontSize: 40),),
+          SizedBox(height: _mediaQuery.height*0.05,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _getDoc('assets/images/doc_chin.jpeg','Dr. Chinmaya Urs R','Founder, CEO'),
+              _getDoc('assets/images/doc_abi.jpeg','Dr. A B Shetty','Co-founder, Managing Director'),
+              _getDoc('assets/images/doc_shar.jpeg','Dr. Sharath Chandra','Co-founder, Medical Director')
+            ],
           ),
+          SizedBox(height: _mediaQuery.height*0.05,),
         ],
       ),
     );

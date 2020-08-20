@@ -24,21 +24,22 @@ class _MobileAboutUsState extends State<MobileAboutUs> {
         children: [
           SizedBox(height: _mediaQuery.height*0.05,),
           Text(
-            "ABOUT US",
+            "About Arya BrightCare",
             style: GoogleFonts.roboto(
                 color: Theme.of(context).primaryColor,
-                fontSize: 30,
-                fontWeight: FontWeight.w900),
+                fontSize: 22,
+                fontWeight: FontWeight.w700),
           ),
           SizedBox(height: _mediaQuery.height*0.05,),
           Card(
-            margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.02),
+            margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.05),
             elevation: 5,
             child: Image.asset(
               'assets/images/about_us.jpg',
               width: double.infinity,
               height: _mediaQuery.height*0.5,
               fit: BoxFit.cover,
+              alignment: Alignment.centerLeft,
             ),
           ),
           Container(

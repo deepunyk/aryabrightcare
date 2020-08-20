@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:websafe_svg/websafe_svg.dart';
 
 class MobileServices extends StatefulWidget {
 
@@ -27,6 +28,18 @@ class _MobileServicesState extends State<MobileServices> {
     "Medical equipment",
     "Stroke rehabilitation",
     "Respiratory care"
+  ];
+
+  List<String> _serviceImg = [
+    'assets/images/services/main/icu_care.jpg',
+    'assets/images/services/main/doctor_consultation.jpg',
+    'assets/images/services/main/care_givers.jpg',
+    'assets/images/services/main/physiotherapy.jpg',
+    'assets/images/services/main/speech.jpg',
+    'assets/images/services/main/lab_test.jpg',
+    'assets/images/services/main/medical_equipments.jpg',
+    'assets/images/services/main/stroke.jpg',
+    'assets/images/services/main/respiratory.jpg',
   ];
 
   List<String> _headList = [
@@ -99,7 +112,7 @@ class _MobileServicesState extends State<MobileServices> {
                       AutoSizeText(
                         title,
                         style: GoogleFonts.roboto(
-                          color: Theme.of(context).accentColor,
+                          color: Theme.of(context).primaryColor,
                           fontSize: 20,
                           fontWeight: FontWeight.w900,
                         ),
@@ -126,11 +139,11 @@ class _MobileServicesState extends State<MobileServices> {
                                 Text(
                                   "More Details",
                                   style: GoogleFonts.roboto(
-                                      color: Theme.of(context).primaryColor,
-                                      fontSize: 15,
+                                      color: Theme.of(context).accentColor,
+                                      fontSize: 12,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                Icon(Icons.navigate_next, color: Theme.of(context).primaryColor,size: 20,)
+                                Icon(Icons.navigate_next, color: Theme.of(context).accentColor,size: 15,)
                               ],
                             ),
                             onPressed: () {
@@ -149,16 +162,159 @@ class _MobileServicesState extends State<MobileServices> {
       );
     }
 
-    Widget _getServiceCard(String title) {
-      return Card(
-        margin: EdgeInsets.only(right: _mediaQuery.width * 0.05),
-        child: Container(
-          alignment: Alignment.center,
-          child: Text(
-            title,
-            style: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w500),
+    Widget _getServiceCard(String title, String img) {
+      return Container(
+        height: _mediaQuery.height*0.3,
+        width: _mediaQuery.width*0.6,
+        margin: EdgeInsets.only(right: 20),
+        child: Card(
+          elevation: 5,
+          child: Stack(
+            children: [
+              Container(height: _mediaQuery.height*0.3,
+                  width: _mediaQuery.width*0.6,child: Image.asset(img,fit: BoxFit.cover,height: double.infinity,width: double.infinity,)),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: _mediaQuery.height*0.1,
+                  width: _mediaQuery.width*0.6,
+                  color: Color(0x80006591),
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: AutoSizeText(
+                    title,
+                    style: GoogleFonts.roboto(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ],
           ),
-          padding: EdgeInsets.symmetric(vertical: 3, horizontal: 20),
+        ),
+      );
+    }
+
+
+    Widget _counter() {
+      return Container(
+        width: double.infinity,
+        height: _mediaQuery.height * 0.15,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.asset(
+                'assets/images/landing/landing_two.jpg',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: double.infinity,
+              color: Color(0x80006591),
+            ),
+            Padding(
+              padding:
+              EdgeInsets.symmetric(horizontal: _mediaQuery.width * 0.04),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        WebsafeSvg.asset('assets/icons/doctor.svg', color: Colors.white, height: _mediaQuery.width*0.08),
+                        Container(
+                          height: _mediaQuery.height*0.08,
+                          width: 2,
+                          color: Colors.white,
+                          margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.02),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              "200+",
+                              style: GoogleFonts.roboto(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 20,
+                                  shadows: [
+                                    Shadow(
+                                      color: Theme.of(context).primaryColor,
+                                      blurRadius: 5,
+                                    )
+                                  ]),
+                              maxLines: 1,
+                            ),
+                            AutoSizeText(
+                              "Empanelled Doctors\nand Nurses",
+                              style: GoogleFonts.roboto(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 11),
+                              maxLines: 2,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: _mediaQuery.width*0.1,),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        WebsafeSvg.asset('assets/icons/patient.svg', color: Colors.white, height: _mediaQuery.width*0.08),
+                        Container(
+                          height: _mediaQuery.height*0.08,
+                          width: 2,
+                          color: Colors.white,
+                          margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.02),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              "1000+",
+                              style: GoogleFonts.roboto(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 20,
+                                  shadows: [
+                                    Shadow(
+                                      color: Theme.of(context).primaryColor,
+                                      blurRadius: 5,
+                                    )
+                                  ]),
+                              maxLines: 1,
+                            ),
+                            AutoSizeText(
+                              "Patients\nTreated",
+                              style: GoogleFonts.roboto(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 11),
+                              maxLines: 2,
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       );
     }
@@ -166,7 +322,7 @@ class _MobileServicesState extends State<MobileServices> {
     return Column(
       children: [
         Container(
-          color: Color(0xffDFECF1),
+          color: Color(0xffF2FBFF),
           width: double.infinity,
           child: Column(
             children: [
@@ -174,14 +330,14 @@ class _MobileServicesState extends State<MobileServices> {
                 height: _mediaQuery.height * 0.05,
               ),
               Text(
-                "SERVICES",
+                "Our Medical Services",
                 style: GoogleFonts.roboto(
                     color: Theme.of(context).primaryColor,
-                    fontSize: 30,
-                    fontWeight: FontWeight.w900),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700),
               ),
               SizedBox(
-                height: _mediaQuery.height * 0.02,
+                height: _mediaQuery.height * 0.015,
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -191,10 +347,20 @@ class _MobileServicesState extends State<MobileServices> {
                 ),
               ),
               SizedBox(
-                height: _mediaQuery.height * 0.03,
+                height: _mediaQuery.height * 0.02,
+              ),
+              Text(
+                "Home Healthcare Services",
+                style: GoogleFonts.roboto(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: _mediaQuery.height * 0.02,
               ),
               Container(
-                height: _mediaQuery.height * 0.1,
+                height: _mediaQuery.height * 0.3,
                 child: ListView(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -203,15 +369,16 @@ class _MobileServicesState extends State<MobileServices> {
                     SizedBox(
                       width: _mediaQuery.width * 0.1,
                     ),
-                    _getServiceCard(_serviceName[0]),
-                    _getServiceCard(_serviceName[1]),
-                    _getServiceCard(_serviceName[2]),
-                    _getServiceCard(_serviceName[3]),
-                    _getServiceCard(_serviceName[4]),
-                    _getServiceCard(_serviceName[5]),
-                    _getServiceCard(_serviceName[6]),
-                    _getServiceCard(_serviceName[7]),
-                    _getServiceCard(_serviceName[8]),
+                    _getServiceCard(_serviceName[0],_serviceImg[0]),
+                    _getServiceCard(_serviceName[1],_serviceImg[1]),
+                    _getServiceCard(_serviceName[2],_serviceImg[2]),
+                    _getServiceCard(_serviceName[3],_serviceImg[3]),
+                    _getServiceCard(_serviceName[4],_serviceImg[4]),
+                    _getServiceCard(_serviceName[5],_serviceImg[5]),
+                    _getServiceCard(_serviceName[6],_serviceImg[6]),
+                    _getServiceCard(_serviceName[7],_serviceImg[7]),
+                    _getServiceCard(_serviceName[8],_serviceImg[8]),
+
                   ],
                 ),
               ),
@@ -222,17 +389,17 @@ class _MobileServicesState extends State<MobileServices> {
           ),
         ),
         Container(
-          color: Theme.of(context).primaryColor,
+          color: Colors.white,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(height: _mediaQuery.height*0.05,),
               Text(
-                "COVID CARE SERVICES",
+                "Covid Care Services",
                 style: GoogleFonts.roboto(
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.w900),
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700),
               ),
               SizedBox(height: _mediaQuery.height*0.05,),
               CarouselSlider(
@@ -279,6 +446,7 @@ class _MobileServicesState extends State<MobileServices> {
                 ],
               ),
               SizedBox(height: _mediaQuery.height*0.05,),
+              _counter(),
             ],
           ),
         ),

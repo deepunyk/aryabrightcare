@@ -88,6 +88,7 @@ class _MobileTeamState extends State<MobileTeam> {
     }
 
     return Container(
+      color: Color(0xffF2FBFF),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

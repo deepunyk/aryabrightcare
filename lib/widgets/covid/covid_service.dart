@@ -41,12 +41,12 @@ class _CovidServiceState extends State<CovidService> {
         elevation: 10,
         margin: EdgeInsets.only(top: _mediaQuery.height*0.05, left: _mediaQuery.width*0.05, right: _mediaQuery.width*0.05, bottom: _mediaQuery.height*0.02),
         child: Container(
-          height: _mediaQuery.height*0.7,
+          height: _mediaQuery.height*0.7,width: double.infinity,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(img,height: double.infinity,fit: BoxFit.cover,),
+              Expanded(child: Image.asset(img,height: double.infinity,fit: BoxFit.contain,)),
               SizedBox(width: _mediaQuery.width*0.02,),
               Container(
                 padding: EdgeInsets.only(right: _mediaQuery.width*0.03),
@@ -68,16 +68,18 @@ class _CovidServiceState extends State<CovidService> {
                     SizedBox(
                       height: _mediaQuery.height * 0.02,
                     ),
-                    Container(height: 4,width: _mediaQuery.width*0.45,color: Theme.of(context).accentColor,),
+                    Container(height: 4,width: _mediaQuery.width*0.4,color: Theme.of(context).accentColor,),
                     SizedBox(
                       height: _mediaQuery.height * 0.02,
                     ),
-                    AutoSizeText(
-                      desc,
-                      style: GoogleFonts.roboto(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400),
+                    Flexible(
+                      child: AutoSizeText(
+                        desc,
+                        style: GoogleFonts.roboto(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
+                      ),
                     ),
                     SizedBox(
                       height: _mediaQuery.height * 0.02,
@@ -92,14 +94,14 @@ class _CovidServiceState extends State<CovidService> {
     }
 
     return Container(
-      color: Color(0xffDFECF1),
+      color: Color(0xffF2FBFF),
       child: Column(
           children: [
             SizedBox(height: _mediaQuery.height*0.05,),
             Text(
-              "SERVICES",
+              "Covid Care Services",
               style: GoogleFonts.roboto(
-                  color: Theme.of(context).primaryColor,
+                  color: Colors.black,
                   fontSize: 40,
                   fontWeight: FontWeight.w900),
               textAlign: TextAlign.center,
@@ -108,6 +110,7 @@ class _CovidServiceState extends State<CovidService> {
             _getService(_headList[1], _bodyList[1], _imgList[1]),
             _getService(_headList[2], _bodyList[2], _imgList[2]),
             _getService(_headList[3], _bodyList[3], _imgList[3]),
+            SizedBox(height: _mediaQuery.height*0.03,),
           ],
         ),
     );

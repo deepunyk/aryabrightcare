@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'AryaBrightCare',
       theme: ThemeData(
         primaryColor: Color(0xff006591),
+        scaffoldBackgroundColor: Colors.white,
         accentColor: Color(0xfffb5d60),
         highlightColor: Color(0xff006591),
         visualDensity: VisualDensity.adaptivePlatformDensity,

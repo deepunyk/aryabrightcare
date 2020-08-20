@@ -30,10 +30,68 @@ class _LandingPageState extends State<LandingPage> {
       return Stack(
         children: [
           Image.asset(
-            'assets/images/landing/landing_five.jpg',
+            'assets/images/landing/landing_one.png',
             width: double.infinity,
+            height: double.infinity,
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
+          ),
+          Container(height: double.infinity,width: double.infinity,color: Color(0x33ffffff),),
+          Container(
+            margin: EdgeInsets.only(left: _mediaQuery.width * 0.1),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "WELCOME TO ARYA BRIGHTCARE",
+                  style: GoogleFonts.roboto(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).primaryColor,
+                      letterSpacing: 1.2),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "We are here\nfor your care",
+                  style: GoogleFonts.roboto(
+                      fontSize: 70,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
+                      height: 0.95),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 450,
+                  child: Text(
+                    "We are currently operating in the city of Bengaluru.",
+                    style: GoogleFonts.roboto(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                RaisedButton(
+                  color: Theme.of(context).primaryColor,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  onPressed: (){
+                    widget.update(6);
+                  },
+                  child: Text("Make an appointment", style: GoogleFonts.roboto(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),),
+                )
+              ],
+            ),
           ),
         ],
       );
@@ -43,29 +101,81 @@ class _LandingPageState extends State<LandingPage> {
       return Stack(
         children: [
           Image.asset(
-            'assets/images/landing/landing_one.png',
+            'assets/images/landing/landing_two.jpg',
             width: double.infinity,
+            height: double.infinity,
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
+          ),
+          Container(
+            margin: EdgeInsets.only(left: _mediaQuery.width * 0.1),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "WELCOME TO ARYA BRIGHTCARE",
+                  style: GoogleFonts.roboto(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Theme.of(context).primaryColor,
+                      letterSpacing: 1.2),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "We Care",
+                  style: GoogleFonts.roboto(
+                      fontSize: 70,
+                      fontWeight: FontWeight.w900,
+                      color: Theme.of(context).primaryColor,
+                      height: 0.95),
+                ),
+                Text(
+                  "About Your Health",
+                  style: GoogleFonts.roboto(
+                      fontSize: 70,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
+                      height: 0.95),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  width: 450,
+                  child: Text(
+                    "Everyday we bring hope and smile to the patient we serve.",
+                    style: GoogleFonts.roboto(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                RaisedButton(
+                  color: Theme.of(context).primaryColor,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  onPressed: (){
+                    widget.update(6);
+                  },
+                  child: Text("Make an appointment", style: GoogleFonts.roboto(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),),
+                )
+              ],
+            ),
           ),
         ],
       );
     }
 
-    Widget _pageThree() {
-      return Stack(
-        children: [
-          Image.asset(
-            'assets/images/landing/landing_two.png',
-            width: double.infinity,
-            fit: BoxFit.cover,
-            alignment: Alignment.topCenter,
-          ),
-        ],
-      );
-    }
-
-    List<Widget> _pages = [_pageOne(), _pageTwo(),_pageThree()];
+    List<Widget> _pages = [_pageTwo(), _pageOne()];
 
     Widget _counter() {
       return Container(
@@ -90,12 +200,15 @@ class _LandingPageState extends State<LandingPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        WebsafeSvg.asset('assets/icons/doctor.svg', color: Theme.of(context).primaryColor, height: _mediaQuery.height*0.08),
+                        WebsafeSvg.asset('assets/icons/doctor.svg',
+                            color: Theme.of(context).primaryColor,
+                            height: _mediaQuery.height * 0.08),
                         Container(
-                          height: _mediaQuery.height*0.1,
+                          height: _mediaQuery.height * 0.1,
                           width: 2,
                           color: Colors.white,
-                          margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.01),
+                          margin: EdgeInsets.symmetric(
+                              horizontal: _mediaQuery.width * 0.01),
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -132,10 +245,13 @@ class _LandingPageState extends State<LandingPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        WebsafeSvg.asset('assets/icons/patient.svg', color: Theme.of(context).primaryColor, height: _mediaQuery.height*0.08),
+                        WebsafeSvg.asset('assets/icons/patient.svg',
+                            color: Theme.of(context).primaryColor,
+                            height: _mediaQuery.height * 0.08),
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: _mediaQuery.width*0.01),
-                          height: _mediaQuery.height*0.1,
+                          margin: EdgeInsets.symmetric(
+                              horizontal: _mediaQuery.width * 0.01),
+                          height: _mediaQuery.height * 0.1,
                           width: 2,
                           color: Colors.white,
                         ),
@@ -178,26 +294,28 @@ class _LandingPageState extends State<LandingPage> {
 
     Widget _getCounter(int code) {
       return Container(
-        width: _mediaQuery.height * 0.02,
-        height: _mediaQuery.height * 0.02,
+        width: _mediaQuery.height * 0.022,
+        height: _mediaQuery.height * 0.022,
         decoration: BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
-            boxShadow: [
-              _cur == code
-                  ? BoxShadow(
-                      color: Theme.of(context).accentColor,
-                      blurRadius: 3,
-                      spreadRadius: 1)
-                  : BoxShadow(),
-            ]),
-        child: ClipOval(
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              onTap: () {
-                _controller.animateToPage(code);
-              },
+          color: Colors.transparent,
+          border: Border.all(color: code == _cur?Colors.white:Colors.transparent,width: 1),
+          shape: BoxShape.circle,
+        ),
+        alignment: Alignment.center,
+        child: Container(
+          width: _mediaQuery.height * 0.012,
+          height: _mediaQuery.height * 0.012,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,),
+          child: ClipOval(
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: () {
+                  _controller.animateToPage(code);
+                },
+              ),
             ),
           ),
         ),
@@ -213,11 +331,11 @@ class _LandingPageState extends State<LandingPage> {
               children: [
                 CarouselSlider(
                   options: CarouselOptions(
+                    height: _mediaQuery.height * 0.9,
                     autoPlayInterval: Duration(seconds: 15),
                     enableInfiniteScroll: true,
                     enlargeCenterPage: true,
                     viewportFraction: 1,
-                    aspectRatio: 1920/540,
                     autoPlay: true,
                     onPageChanged: (val, _) {
                       setState(() {
@@ -226,7 +344,7 @@ class _LandingPageState extends State<LandingPage> {
                     },
                   ),
                   carouselController: _controller,
-                  items: [0, 1,2].map((i) {
+                  items: [0,1].map((i) {
                     return Builder(
                       builder: (BuildContext context) {
                         return _pages[i];
@@ -244,17 +362,12 @@ class _LandingPageState extends State<LandingPage> {
                         width: _mediaQuery.width * 0.01,
                       ),
                       _getCounter(1),
-                      SizedBox(
-                        width: _mediaQuery.width * 0.01,
-                      ),
-                      _getCounter(2),
                     ],
                   ),
                 )
               ],
             ),
           ),
-          _counter()
         ],
       ),
     );
