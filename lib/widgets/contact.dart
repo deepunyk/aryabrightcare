@@ -156,7 +156,7 @@ class _ContactState extends State<Contact> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Icon(

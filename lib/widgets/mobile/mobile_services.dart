@@ -404,13 +404,11 @@ class _MobileServicesState extends State<MobileServices> {
               SizedBox(height: _mediaQuery.height*0.05,),
               CarouselSlider(
                 options: CarouselOptions(
-                  autoPlayInterval: Duration(seconds: 5),
                   height: _mediaQuery.height * 0.6,
                   enableInfiniteScroll: false,
                   enlargeCenterPage: true,
                   viewportFraction: 0.84,
                   scrollPhysics: BouncingScrollPhysics(),
-                  autoPlay: true,
                   onPageChanged: (val, _) {
                     setState(() {
                       _cur = val;

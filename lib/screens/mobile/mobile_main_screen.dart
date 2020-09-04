@@ -1,3 +1,4 @@
+import 'package:aryabrightcare/screens/mobile/Blog/mobile_blog_screen.dart';
 import 'package:aryabrightcare/screens/mobile/covid/covid_mobile_main_screen.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_about_us.dart';
 import 'package:aryabrightcare/widgets/mobile/mobile_footer.dart';
@@ -27,7 +28,13 @@ class _MobileMainScreenState extends State<MobileMainScreen> {
       setState(() {
 
       });
-    }else{
+    }else if(code == 7){
+      _curWidget = 2;
+      setState(() {
+
+      });
+    }
+    else{
       _curWidget = 0;
       _controller.scrollToIndex(code,preferPosition: AutoScrollPosition.begin);
       setState(() {
@@ -103,6 +110,17 @@ class _MobileMainScreenState extends State<MobileMainScreen> {
               },
             ),
             ListTile(
+              title: Text('Blog'),
+              leading: Icon(MdiIcons.newspaper, color: Theme.of(context).primaryColor,),
+              onTap: () {
+                _curWidget = 2;
+                Navigator.of(context).pop();
+                setState(() {
+
+                });
+              },
+            ),
+            ListTile(
               title: Text('Team'),
               leading: Icon(Icons.supervisor_account, color: Theme.of(context).primaryColor,),
               onTap: () {
@@ -153,8 +171,11 @@ class _MobileMainScreenState extends State<MobileMainScreen> {
     Widget _covidWidget(){
       return CovidMobileMainScreen();
     }
+    Widget _blogWidget(){
+      return MobileBlogScreen();
+    }
 
-    List<Widget> _widgetList = [_homeWidget(), _covidWidget()];
+    List<Widget> _widgetList = [_homeWidget(), _covidWidget(),_blogWidget()];
 
     return Scaffold(
       backgroundColor: Colors.white,

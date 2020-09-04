@@ -215,14 +215,14 @@ class _MServicesState extends State<MServices> {
                     fontSize: 40,
                     fontWeight: FontWeight.w900, color: Theme.of(context).primaryColor),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
                 "From health packages for the busy executive to trained nurses for post-surgery care, we offer all that you need for the happy and the tough times.",
                 style: GoogleFonts.roboto(color: Colors.black, fontSize: 18),textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Text(
@@ -231,7 +231,7 @@ class _MServicesState extends State<MServices> {
                     fontSize: 30,
                     fontWeight: FontWeight.w700),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -278,15 +278,13 @@ class _MServicesState extends State<MServices> {
                     fontSize: 40,
                     fontWeight: FontWeight.w900),
               ),
-              CarouselSlider(
+            CarouselSlider(
                 options: CarouselOptions(
-                  autoPlayInterval: Duration(seconds: 5),
                   height: _mediaQuery.height * 0.6,
                   enableInfiniteScroll: false,
                   enlargeCenterPage: true,
                   viewportFraction: 0.6,
                   scrollPhysics: BouncingScrollPhysics(),
-                  autoPlay: true,
                   onPageChanged: (val, _) {
                     setState(() {
                       _cur = val;

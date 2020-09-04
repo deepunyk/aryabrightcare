@@ -51,7 +51,7 @@ class _LandingPageState extends State<LandingPage> {
                       color: Theme.of(context).primaryColor,
                       letterSpacing: 1.2),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -62,7 +62,7 @@ class _LandingPageState extends State<LandingPage> {
                       color: Colors.black,
                       height: 0.95),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
@@ -75,7 +75,7 @@ class _LandingPageState extends State<LandingPage> {
                         color: Colors.black),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 RaisedButton(
@@ -121,7 +121,7 @@ class _LandingPageState extends State<LandingPage> {
                       color: Theme.of(context).primaryColor,
                       letterSpacing: 1.2),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -140,7 +140,7 @@ class _LandingPageState extends State<LandingPage> {
                       color: Colors.black,
                       height: 0.95),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
@@ -153,7 +153,7 @@ class _LandingPageState extends State<LandingPage> {
                         color: Colors.black),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 RaisedButton(

@@ -31,7 +31,7 @@ class _CustomButtonState extends State<CustomButton> {
             widget.onclick();
           },
           hoverColor: Color(0x1affffff),
-          child: Padding(padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),child: Text(widget.title,style: GoogleFonts.roboto(
+          child: Padding(padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),child: Text(widget.title,style: GoogleFonts.roboto(
               color: Colors.white,
               fontSize: 15,
               fontWeight: FontWeight.w500),),),

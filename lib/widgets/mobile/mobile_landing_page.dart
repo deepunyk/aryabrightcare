@@ -54,7 +54,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       color: Theme.of(context).primaryColor,
                       letterSpacing: 1.2),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -65,7 +65,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       color: Colors.black,
                       height: 0.95),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
@@ -78,7 +78,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                         color: Colors.black),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 RaisedButton(
@@ -125,7 +125,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       color: Theme.of(context).primaryColor,
                       letterSpacing: 1.2),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -144,7 +144,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                       color: Colors.black,
                       height: 0.95),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
@@ -157,7 +157,7 @@ class _MobileLandingPageState extends State<MobileLandingPage> {
                         color: Colors.black),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 RaisedButton(

@@ -1,3 +1,4 @@
+import 'package:aryabrightcare/screens/desktop/Blog/blog_screen.dart';
 import 'package:aryabrightcare/screens/desktop/covid/covid_main_screen.dart';
 import 'package:aryabrightcare/widgets/contact.dart';
 import 'package:aryabrightcare/widgets/landing_page.dart';
@@ -26,6 +27,11 @@ class _MainScreenState extends State<MainScreen> {
       setState(() {
 
       });
+    }else if(code == 7){
+      _curWidget = 2;
+      setState(() {
+
+      });
     }else{
       _curWidget = 0;
       _controller.scrollToIndex(code,preferPosition: AutoScrollPosition.begin);
@@ -50,6 +56,7 @@ class _MainScreenState extends State<MainScreen> {
 
     Widget _homeWidget(){
       return ListView(
+        
         controller: _controller,
         children: [
           AutoScrollTag(index: 1,controller: _controller,child: LandingPage(_updatePage), key: Key("1"),),
@@ -64,9 +71,12 @@ class _MainScreenState extends State<MainScreen> {
     Widget _covidWidget(){
       return CovidMainScreen();
     }
+    Widget _blogWidget(){
+      return BlogScreen();
+    }
 
-    List<Widget> _widgetList = [_homeWidget(), _covidWidget()];
-    
+    List<Widget> _widgetList = [_homeWidget(), _covidWidget(),_blogWidget()];
+  
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(

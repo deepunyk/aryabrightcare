@@ -81,6 +81,7 @@ class _NavBarState extends State<NavBar> {
                 _getNavItem('Team', 4),
                 _getNavItem('Covid Care', 5),
                 _getNavItem('Contact', 6),
+                _getNavItem('Blog', 7),
               ],
             )
           ],
